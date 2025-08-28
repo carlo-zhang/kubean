@@ -53,13 +53,12 @@ function iso::mk_server_path() {
         echo "/ubuntu-iso"
         return
       fi
-    fi
-    if [ -L "$path" ]; then
       if echo "$path" | grep 'debian' &>/dev/null; then
         echo "/debian-iso"
         return
       fi
     fi
+
     if [ -f "$path" ]; then
 
       if [[ "$(basename $path)" = ".productinfo" ]]; then
